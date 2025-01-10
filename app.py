@@ -84,7 +84,8 @@ if st.button("🔄 Translate"):
     st.session_state.src_code = src_code
     st.session_state.dest_code = dest_code
     
-    st.write(f"**Translated Text:** {translated_text}")
+    #st.write(f"**Translated Text:** {translated_text}")
+    st.text_area("Translated Text", translated_text, height=150)
 
 # Reverse Translation
 if st.button("🔁 Reverse Translate"):
@@ -93,6 +94,7 @@ if st.button("🔁 Reverse Translate"):
         src_code = st.session_state.src_code
         dest_code = st.session_state.dest_code
         reversed_text = asyncio.run(translate_text(translated_text, dest_code, src_code))
-        st.write(f"**Reversed Translation:** {reversed_text}")
+        #st.write(f"**Reversed Translation:** {reversed_text}")
+        st.text_area("Reversed Translated Text", reversed_text, height=150)
     else:
         st.write("Please translate the text first.")
