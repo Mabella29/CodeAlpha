@@ -41,7 +41,7 @@ async def detect_language(text):
         return f"Error: {e}"
 
 # Streamlit app
-st.title("Language Translator")
+st.title("🌍 Language Translator") 
 
 # Language options
 languages = {
@@ -62,7 +62,7 @@ languages = {
 text_to_translate = st.text_area("Enter text to translate:", "Hello, how are you?")
 
 # Language detection option
-detect_language_checkbox = st.checkbox("Detect source language")
+detect_language_checkbox = st.checkbox("🔍 Detect source language")
 
 if detect_language_checkbox and text_to_translate.strip():
     detected_language_code = asyncio.run(detect_language(text_to_translate))
@@ -75,7 +75,7 @@ else:
 dest_language = st.selectbox("Select destination language:", options=list(languages.keys()), index=1, key="dest")
 
 # Translation
-if st.button("Translate"):
+if st.button("🔄 Translate"):
     src_code = languages.get(src_language, src_language)  
     dest_code = languages[dest_language]
 
@@ -87,7 +87,7 @@ if st.button("Translate"):
     st.write(f"**Translated Text:** {translated_text}")
 
 # Reverse Translation
-if st.button("Reverse Translate"):
+if st.button("🔁 Reverse Translate"):
     if 'translated_text' in st.session_state and 'src_code' in st.session_state and 'dest_code' in st.session_state:
         translated_text = st.session_state.translated_text
         src_code = st.session_state.src_code
