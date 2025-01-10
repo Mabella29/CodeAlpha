@@ -41,7 +41,7 @@ async def detect_language(text):
         return f"Error: {e}"
 
 # Streamlit app
-st.title("Language Translation Tool")
+st.title("Language Translator")
 
 # Language options
 languages = {
@@ -53,7 +53,9 @@ languages = {
     "Japanese": "ja",
     "Chinese": "zh-cn",
     "Arabic": "ar",
-    "Hindi": "hi"
+   'afrikaans': 'af',
+    "Hindi": "hi",
+    'igbo': 'ig'
 }
 
 # Input fields
